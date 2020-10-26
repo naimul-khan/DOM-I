@@ -40,3 +40,82 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navigation = document.querySelectorAll('nav a'); 
+console.log(navigation);
+
+const navLinksArray = Array.from(navigation);
+console.log(navLinksArray); 
+
+navLinksArray[0].innerText = "Services";
+navLinksArray[1].innerText = "Product";
+navLinksArray[2].innerText = "Vision";
+navLinksArray[3].innerText = "Features";
+navLinksArray[4].innerText = "About";
+navLinksArray[5].innerText = "Contact";
+
+navLinksArray.forEach((item) => item.setAttribute('style', 'color:green'));
+
+const appendTeam = navLinksArray[0].cloneNode(true); 
+appendTeam.textContent = "Our Team";
+document.querySelector('nav').appendChild(appendTeam);
+
+const prependHome = navLinksArray[0].cloneNode(true); 
+prependHome.textContent = "Home";
+document.querySelector('nav').prepend(prependHome); 
+
+const jumboTron = document.querySelector(".cta-text"); 
+jumboTron.querySelector('h1').innerText = "DOM\nIS\nAWESOME";
+jumboTron.querySelector('button').textContent = "Get Started";
+
+const jumboImage = document.querySelector('#cta-img'); 
+jumboImage.src = "/img/header-img.png";
+console.log(jumboImage);
+
+const mainContent = document.querySelector('.main-content');
+const topContent  = mainContent.firstElementChild; 
+
+const featuresContent = topContent.firstElementChild;
+featuresContent.querySelector('h4').textContent = 'Features';
+featuresContent.querySelector('p').textContent = 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
+
+const aboutContent = featuresContent.nextElementSibling; 
+aboutContent.querySelector('h4').textContent = 'About';
+aboutContent.querySelector('p').innerText = 'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
+
+const midImg = topContent.nextElementSibling; 
+midImg.src = '/img/mid-page-accent.jpg';
+
+const bottomContent = midImg.nextElementSibling; 
+
+const servicesContent = bottomContent.firstElementChild; 
+servicesContent.querySelector('h4').textContent = "Services";
+servicesContent.querySelector('p').textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+
+const productContent = servicesContent.nextElementSibling; 
+productContent.querySelector('h4').textContent = "Product";
+productContent.querySelector('p').textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+
+const visionContent = productContent.nextElementSibling; 
+visionContent.querySelector('h4').textContent = "Vision";
+visionContent.querySelector('p').textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+
+const contact = document.querySelector('.contact'); 
+contact.querySelector('h4').innerText = "Contact"; 
+
+const contactAddress = contact.querySelector('p');
+contactAddress.textContent = "123 Way 456 Street, \n Somewhere, USA";
+
+const contactPhone = contactAddress.nextSibling;
+contactPhone.textContent = "1 (888) 888-8888";
+
+const contactEmail = contactPhone.nextSibling; 
+contactEmail.textContent = 'sales@greatidea.io';
+
+const footer = document.querySelector('footer'); 
+footer.querySelector('p').innerText = 'Copyright Great Idea! 2018';
+
+
+
+
+
