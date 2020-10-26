@@ -41,7 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const navigation = document.querySelectorAll('nav a'); 
+let navigation = document.querySelectorAll('nav a'); 
 console.log(navigation);
 
 const navLinksArray = Array.from(navigation);
@@ -53,6 +53,16 @@ navLinksArray[2].innerText = "Vision";
 navLinksArray[3].innerText = "Features";
 navLinksArray[4].innerText = "About";
 navLinksArray[5].innerText = "Contact";
+
+navLinksArray.forEach((item) => item.setAttribute('style', 'color:green'));
+
+const appendTeam = navLinksArray[0].cloneNode(true); 
+appendTeam.textContent = "Our Team";
+document.querySelector('nav').appendChild(appendTeam);
+
+const prependHome = navLinksArray[0].cloneNode(true); 
+prependHome.textContent = "Home";
+document.querySelector('nav').prepend(prependHome); 
 
 const jumboTron = document.querySelector(".cta-text"); 
 jumboTron.querySelector('h1').innerText = "DOM\nIS\nAWESOME";
